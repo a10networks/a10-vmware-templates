@@ -1,0 +1,25 @@
+formatVersion: 1
+inputs: {}
+resources:
+  Cloud_vSphere_Machine_1:
+    type: Cloud.vSphere.Machine
+    properties:
+      image: ACOS-521-P6-OVA
+      name: vth-inst1
+      flavor: medium
+      folderName: vRA Deployments
+  Cloud_vSphere_Machine_2:
+    type: Cloud.vSphere.Machine
+    properties:
+      image: ACOS-521-P6-OVA
+      name: vth-inst2
+      flavor: medium
+      folderName: vRA Deployments
+  Cloud_vSphere_Machine_3:
+    type: Cloud.vSphere.Machine
+    properties:
+      image: ACOS-521-P6-OVA
+      name: vth-inst3
+      flavor: medium
+      folderName: vRA Deployments
+

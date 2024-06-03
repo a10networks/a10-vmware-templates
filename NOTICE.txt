@@ -1,0 +1,2 @@
+VMWARE Sample Templates.
+Copyright 2024 A10 Networks Inc. All Rights Reserved.
