@@ -11,7 +11,7 @@ This template contains several configurations of Thunder which can be applied vi
 Below listed A10’s vThunder vADC (Application Delivery Controller) are tested and supported.
 
 
-|        ACOS ADC         | [VMWARE 1.0.0](https://gitlab.a10networks.com/dev-shared-infra/a10-vmware-template-internal) | [ VMWARE 1.1.0](https://gitlab.a10networks.com/dev-shared-infra/a10-vmware-template-internal/-/tree/feature/v1.1.0) |
+|        ACOS ADC         | VMWARE 1.0.0 | VMWARE 1.1.0 |
 |:-----------------------:|:-------------------------------------------------------------------------------------------------------:|:------------------------------------------------------------------------------------------:|
 `ACOS version 6.0.3-p1`|                    `Yes`|                                          `Yes`| 
 `ACOS version 6.0.3`|                    `Yes`|                                          `Yes`| 
