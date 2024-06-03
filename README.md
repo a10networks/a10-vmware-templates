@@ -46,7 +46,7 @@ Below listed A10’s vThunder vADC (Application Delivery Controller) are tested 
   6. SSL-CERTIFICATE
   7. CONFIG-SLB_ON_BACKEND-AUTOSCALE
 
-For more information on using this option please refer to VMware documentation:https://documentation.a10networks.com/docs/IaC/vmware-esxi/1-1-0/
+For more information on using this option please refer to [release 1.1.0 documentation](https://documentation.a10networks.com/docs/IaC/vmware-esxi/1-1-0/)
 
 ## VMware Templates-1.0.0
 
@@ -54,7 +54,7 @@ For more information on using this option please refer to VMware documentation:h
  
 - **VMware VSphere**<br>
 The pre-requisite to using this option is to download the scripts first by the user, upload script to VMware VSphere cloud assembly and select parameters. <br>
-For more information on using this option please refer to VMware documentation:https://documentation.a10networks.com/IaC/VMware/1_0_0/html/VMware_TEMP_Responsive_HTML5/Default.htm#vmwareTOC
+For more information on using this option please refer to [release 1.0.0 documentation](https://documentation.a10networks.com/IaC/VMware/1_0_0/html/VMware_TEMP_Responsive_HTML5/Default.htm#vmwareTOC)
 
 ## How to download the A10 vThunder image
 
@@ -93,23 +93,16 @@ To verify the applied configuration, follow the below steps:
      $ `show running-config`
 
   You will see the following configurations:
+```
     !
-
     interface management
-
       ip address X.X.X.X 255.255.255.0
-
       ip default-gateway X.X.X.X
-
     !
-
     interface ethernet 1
-
     !
-
     interface ethernet 2
-
-
+```
 
 
 ## How to contribute
