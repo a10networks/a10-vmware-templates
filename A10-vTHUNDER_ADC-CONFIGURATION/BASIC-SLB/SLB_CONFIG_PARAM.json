@@ -1,0 +1,153 @@
+{
+    "parameters": {
+      "template-http": 0,
+      "template-persist-cookie": 0,
+      "vth_username": "admin",
+      "data_interface_count":2,
+      "publicIpList": ["X.X.X.X"],
+      "vthunder1-address-list": {
+        "ethernet1-addresses" : [
+            {
+                "ipv4-address": "X.X.X.X",
+                "ipv4-netmask": "255.255.255.0"
+            }
+
+        ],
+        "ethernet2-addresses" : [
+            {
+                "ipv4-address": "X.X.X.X",
+                "ipv4-netmask": "255.255.255.0"
+            }
+        ]
+      },
+      "vthunder2-address-list": {
+        "ethernet1-addresses" : [
+            {
+                "ipv4-address": "X.X.X.X",
+                "ipv4-netmask": "255.255.255.0"
+            }
+
+        ],
+        "ethernet2-addresses" : [
+            {
+                "ipv4-address": "X.X.X.X",
+                "ipv4-netmask": "255.255.255.0"
+            }
+        ]
+      },
+      "server_details": {
+        "value": [
+          {
+            "server-name": "server1",
+            "pvt-ip-address": "X.X.X.X"
+          },
+
+          {
+            "server-name": "server2",
+            "pvt-ip-address": "X.X.X.X"
+          }
+        ]},
+      "slbServerPortList": {
+        "value": [
+            {
+                "port-number": 53,
+                "protocol": "udp",
+                "health-check-disable":1
+            },
+            {
+                "port-number": 80,
+                "protocol": "tcp",
+                "health-check-disable":1
+            },
+            {
+                "port-number": 443,
+                "protocol": "tcp",
+                "health-check-disable":1
+            }
+        ]
+    },
+  "virtualServerList": {
+        "virtual-server-name": "vip",
+        "eth1-ip-address": "X.X.X.X",
+        "metadata": {
+          "description": "specify ethernet 1 primary private IP address in case of SLB without High Availability and secondary private IP address in case of SLB with High Availability."
+        },
+        "value": [
+          {
+            "port-number": 53,
+            "protocol": "udp",
+            "auto": 1,
+            "service-group": "sg53"
+          },
+          {
+            "port-number": 80,
+            "protocol": "http",
+            "auto": 1,
+            "service-group": "sg80",
+            "template-http": "<host-switching-template-name or url-switching-template-name>",
+             "template-persist-cookie": "<persist-cookie-template-name>"
+          },
+          {
+            "port-number": 443,
+            "protocol": "https",
+            "auto": 1,
+            "service-group": "sg443",
+            "template-http": "<host-switching-template-name or url-switching-template-name>",
+            "template-persist-cookie": "<persist-cookie-template-name>"
+
+          }
+        ]
+      },
+      "serviceGroupList": {
+          "value": [
+            {
+              "name": "sg443",
+              "protocol": "tcp"
+            },
+            {
+              "name": "sg53",
+              "protocol": "udp"
+            },
+            {
+              "name": "sg80",
+              "protocol": "tcp"
+            }
+          ]
+        },
+      "cookie-list":{
+        "value": [
+      {
+          "name": "<persist-cookie-template-name>",
+          "expire": 60,
+          "cookie-name": "<cookie-template-name>",
+          "encrypt-level": 0,
+          "match-type": 1,
+          "service-group":1
+
+      }
+  ]},
+    "httpList": {
+      "value": [
+        {
+          "name":"<host-switching-template-name>",
+          "host-switching": [
+            {
+              "host-switching-type":"contains",
+              "host-match-string":"s1",
+              "host-service-group":"sg80"
+            }
+          ]
+        },
+        {
+          "name":"<url-switching-template-name>",
+          "url-switching": [
+            {
+              "url-switching-type":"regex-match",
+              "url-match-string":"s1",
+              "url-service-group":"sg80"
+            }
+          ]
+        }
+      ]
+    }
+    }}
